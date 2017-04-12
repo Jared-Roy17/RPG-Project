@@ -41,3 +41,4 @@ public class BasePlayer {
         set { strength = value; }
     }
 }
+ 
