@@ -11,6 +11,7 @@ public class SaveInformation : MonoBehaviour {
 		PlayerPrefs.SetInt ("ENDURANCE", GameInformation.Endurance);
 		PlayerPrefs.SetInt ("INTELLECT", GameInformation.Intellect);
 		PlayerPrefs.SetInt ("STRENGTH", GameInformation.Strength);
+		Debug.Log ("SAVED ALL INFORMATION");
 	}
 
 }
