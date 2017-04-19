@@ -35,6 +35,7 @@ public class CreateNewCharacter : MonoBehaviour {
             newPlayer.Intellect = newPlayer.PlayerClass.Intellect;
             newPlayer.Strength = newPlayer.PlayerClass.Strength;
             newPlayer.PlayerName = playerName;
+			StoreNewPlayerInfo ();
 			SaveInformation.SaveAllInformation ();
             Debug.Log("Player Name: " + newPlayer.PlayerName);
             Debug.Log("Player Class: " + newPlayer.PlayerClass.CharacterClassName);
@@ -44,9 +45,9 @@ public class CreateNewCharacter : MonoBehaviour {
            	Debug.Log("Player Intellect " + newPlayer.Intellect);
            	Debug.Log("Player Strength " + newPlayer.Strength);
         }
-		//if (GUILayout.Button ("Load")) {
-			//Application.LoadLevel ("test");
-		//}
+		if (GUILayout.Button ("Load")) {
+			Application.LoadLevel ("test");
+		}
     }
 
 	private void StoreNewPlayerInfo() {
