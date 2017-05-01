@@ -10,6 +10,7 @@ public class BaseWizardClass : BaseCharacterClass {
 		Endurance = 14;
 		Strength = 10;
 		Intellect = 15;
+		Resistance = 13;
 	}
 
 }

@@ -11,6 +11,8 @@ public class SaveInformation : MonoBehaviour {
 		PlayerPrefs.SetInt ("ENDURANCE", GameInformation.Endurance);
 		PlayerPrefs.SetInt ("INTELLECT", GameInformation.Intellect);
 		PlayerPrefs.SetInt ("STRENGTH", GameInformation.Strength);
+		PlayerPrefs.SetInt ("RESISTANCE", GameInformation.Resistance);
+		PlayerPrefs.SetInt ("GOLD", GameInformation.Gold);
 		if (GameInformation.EquipmentOne != null){
 			PPSerialization.Save ("EQUIPMENTITEM1", GameInformation.EquipmentOne);
 	}
