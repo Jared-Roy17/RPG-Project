@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class DisplayCreatePlayerFunctions {
 
-	// Use this for initialization
-	void Start () {
-		
+	private int classSelection;
+	private string[] classSelectionNames = new string[] {"Wizard", "Warrior", "Archer"};
+
+	public void DisplayClassSelections() {
+		classSelection = GUI.SelectionGrid
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	public void DisplayStatAllocation(){
+
+	}
+
+	public void DisplayFinalSetup(){
 		
 	}
 
