@@ -6,10 +6,10 @@ public class BaseCharacterClass {
 	protected string characterClassName;
 	protected string characterClassDescription;
 
-	private int stamina;
-	private int endurance;
-	private int strength;
-	private int intellect;
+	public int stamina;
+	public int endurance;
+	public int strength;
+	public int intellect;
 	public int resistance;
 
 	public string CharacterClassName {

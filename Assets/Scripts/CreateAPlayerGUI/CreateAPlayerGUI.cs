@@ -33,6 +33,7 @@ public class CreateAPlayerGUI : MonoBehaviour {
 	}
 
 	void OnGUI(){
+		displayFunctions.DisplayMainItems ();
 		if (currentState == CreateAPlayerStates.CLASSSELECTION) {
 			displayFunctions.DisplayClassSelections ();
 		}

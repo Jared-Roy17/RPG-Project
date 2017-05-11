@@ -4,13 +4,13 @@ using System.Collections;
 public class BaseWizardClass : BaseCharacterClass {
 
 	public BaseWizardClass() {
-		//characterClassName = "Wizard";
-		//characterClassDescription = "A powerful magic wielder";
+		characterClassName = "Wizard";
+		characterClassDescription = "A Powerful Mage";
 		Stamina = 12;
-		Endurance = 14;
+		Endurance = 13;
 		Strength = 10;
 		Intellect = 15;
-		Resistance = 13;
+		Resistance = 11;
 	}
 
 }

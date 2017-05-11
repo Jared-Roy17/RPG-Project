@@ -7,16 +7,17 @@ public class BasePlayer {
     private int playerLevel;
     private BaseCharacterClass playerClass;
 
-    private int stamina;//Energy
-    private int endurance;//Health
-    private int intellect;//Magical damege
-    private int strength;//Physical Damege
-	private int resistance;//All Damage Reduction
+    private int stamina;	//Energy
+    private int endurance;	//Health
+    private int intellect;	//Magical damege
+    private int strength;	//Physical Damege
+	private int resistance;	//All Damage Reduction
 
-	private int gold; //In game Currency
+	private int gold; 		//In game Currency
 
 	private int currentXP;
 	private int requiredXP;
+	private int statPointsToAllocate;
 
    // public string PlayerName {
 		//get{ return playerName;} 
@@ -26,6 +27,7 @@ public class BasePlayer {
 	public string PlayerName{ get; set;}
 	public int CurrentXP{ get; set;}
 	public int RequiredXP{ get; set;}
+	public int StatPointsToAllocate{ get; set;}
 
     public int PlayerLevel {
         get { return playerLevel; }
