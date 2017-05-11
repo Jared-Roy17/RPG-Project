@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DisplayCreatePlayerFunctions {
 
+	private StatAllocationModule statAllocationModule = new StatAllocationModule();
+
 	private int classSelection;
 	private string[] classSelectionNames = new string[] {"Wizard", "Warrior", "Archer"};
 

@@ -16,7 +16,7 @@ public class CreateAPlayerGUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		currentState = CreateAPlayerStates.CLASSSELECTION;
+		currentState = CreateAPlayerStates.STATALLOCATION;
 	}
 	
 	// Update is called once per frame
@@ -33,7 +33,7 @@ public class CreateAPlayerGUI : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		displayFunctions.DisplayMainItems ();
+		//displayFunctions.DisplayMainItems ();
 		if (currentState == CreateAPlayerStates.CLASSSELECTION) {
 			displayFunctions.DisplayClassSelections ();
 		}
