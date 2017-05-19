@@ -11,15 +11,13 @@ public class CreateAPlayerGUI : MonoBehaviour {
 
 	}
 
-	private DisplayCreatePlayerFunctions displayFunctions = new DisplayCreatePlayerFunctions();
-	private CreateAPlayerStates currentState;
+	public DisplayCreatePlayerFunctions displayFunctions = new DisplayCreatePlayerFunctions();
+	public static CreateAPlayerStates currentState;
 
-	// Use this for initialization
 	void Start () {
-		currentState = CreateAPlayerStates.STATALLOCATION;
+		currentState = CreateAPlayerStates.CLASSSELECTION;
 	}
-	
-	// Update is called once per frame
+
 	void Update ()
 	{
 		switch (currentState) {
@@ -33,7 +31,7 @@ public class CreateAPlayerGUI : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		//displayFunctions.DisplayMainItems ();
+		displayFunctions.DisplayMainItems ();
 		if (currentState == CreateAPlayerStates.CLASSSELECTION) {
 			displayFunctions.DisplayClassSelections ();
 		}

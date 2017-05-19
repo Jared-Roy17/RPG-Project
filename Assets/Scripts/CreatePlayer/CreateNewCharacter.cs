@@ -57,14 +57,14 @@ public class CreateNewCharacter : MonoBehaviour {
 		newPlayer.Resistance = newPlayer.PlayerClass.Resistance;
 		newPlayer.Gold = 10;
 		newPlayer.PlayerName = playerName;
-		//Debug.Log ("Player Name: " + newPlayer.PlayerName);
-		//Debug.Log ("Player Class: " + newPlayer.PlayerClass.CharacterClassName);
-		//Debug.Log ("Player Level: " + newPlayer.PlayerLevel);
-		//Debug.Log ("Player Stamina: " + newPlayer.Stamina);
-		//Debug.Log ("Player Endurance: " + newPlayer.Endurance);
-		//Debug.Log ("Player Intellect: " + newPlayer.Intellect);
-		//Debug.Log ("Player Strength: " + newPlayer.Strength);
-		//Debug.Log ("Player Resistance: " + newPlayer.Resistance);
-		//Debug.Log ("Player Gold: " + newPlayer.Gold);
+		Debug.Log ("Player Name: " + newPlayer.PlayerName);
+		Debug.Log ("Player Class: " + newPlayer.PlayerClass.CharacterClassName);
+		Debug.Log ("Player Level: " + newPlayer.PlayerLevel);
+		Debug.Log ("Player Stamina: " + newPlayer.Stamina);
+		Debug.Log ("Player Endurance: " + newPlayer.Endurance);
+		Debug.Log ("Player Intellect: " + newPlayer.Intellect);
+		Debug.Log ("Player Strength: " + newPlayer.Strength);
+		Debug.Log ("Player Resistance: " + newPlayer.Resistance);
+		Debug.Log ("Player Gold: " + newPlayer.Gold);
 	}
 }

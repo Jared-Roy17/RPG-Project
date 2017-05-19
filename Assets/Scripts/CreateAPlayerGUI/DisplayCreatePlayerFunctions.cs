@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class DisplayCreatePlayerFunctions {
 
-	private StatAllocationModule statAllocationModule = new StatAllocationModule();
+	public StatAllocationModule statAllocationModule = new StatAllocationModule();
 
 	private int classSelection;
 	private string[] classSelectionNames = new string[] {"Wizard", "Warrior", "Archer"};
+	private string playerName = "Enter Name";
+	private string playerBio = "Enter Player Bio";
+	private bool isMale = true;
+	private int genderSelection;
+	private string[] genderTypes = new string[2] {"Male", "Female"};
 
 	public void DisplayClassSelections() {
 		classSelection = GUI.SelectionGrid (new Rect (50, 50, 250, 300), classSelection, classSelectionNames, 3);
@@ -51,7 +56,18 @@ public class DisplayCreatePlayerFunctions {
 	}
 
 	public void DisplayFinalSetup(){
-		
+		playerName = GUI.TextArea (new Rect(20,10,150,25), playerName, 20);
+		playerBio = GUI.TextArea (new Rect(20,90,250,200),playerBio, 250);
+		genderSelection = GUI.SelectionGrid (new Rect (0, 0, 0, 0), genderSelection, genderTypes, 1);
+
+	}
+
+	private void ChooseClass (int classSelection){
+		if (classSelection == 0) {
+			GameInformation.PlayerClass = new BaseWizardClass ();
+		} else if (classSelection == 1) {
+			GameInformation.PlayerClass = new BaseWarriorClass ();
+		}
 	}
 
 	public void DisplayMainItems() {
@@ -63,6 +79,31 @@ public class DisplayCreatePlayerFunctions {
 		}
 		if (GUI.Button (new Rect (470, 370, 50, 50), ">>>")) {
 			player.Rotate (Vector3.down * 10); 
+		}
+		if (CreateAPlayerGUI.currentState != CreateAPlayerGUI.CreateAPlayerStates.FINALSETUP) {
+			if (GUI.Button (new Rect (525, 370, 50, 50), "Next")) {
+				if (CreateAPlayerGUI.currentState == CreateAPlayerGUI.CreateAPlayerStates.CLASSSELECTION) {
+					ChooseClass (classSelection);
+					CreateAPlayerGUI.currentState = CreateAPlayerGUI.CreateAPlayerStates.STATALLOCATION;
+				} else if (CreateAPlayerGUI.currentState == CreateAPlayerGUI.CreateAPlayerStates.STATALLOCATION) {
+					CreateAPlayerGUI.currentState = CreateAPlayerGUI.CreateAPlayerStates.FINALSETUP;
+				}
+			}
+		} else if (CreateAPlayerGUI.currentState == CreateAPlayerGUI.CreateAPlayerStates.FINALSETUP) {
+			if (GUI.Button (new Rect (525, 370, 50, 50), "Finish")) {
+				Debug.Log ("MAKE FINAL SAVE");
+			}
+		}
+		if (CreateAPlayerGUI.currentState != CreateAPlayerGUI.CreateAPlayerStates.CLASSSELECTION) {
+			if (GUI.Button (new Rect (290, 370, 50, 50), "Back")) {
+				if (CreateAPlayerGUI.currentState == CreateAPlayerGUI.CreateAPlayerStates.STATALLOCATION) {
+					statAllocationModule.didRunOnce = false;
+					GameInformation.PlayerClass = null;
+					CreateAPlayerGUI.currentState = CreateAPlayerGUI.CreateAPlayerStates.CLASSSELECTION;
+				} else if (CreateAPlayerGUI.currentState == CreateAPlayerGUI.CreateAPlayerStates.FINALSETUP) {
+					CreateAPlayerGUI.currentState = CreateAPlayerGUI.CreateAPlayerStates.STATALLOCATION;
+				}
+			}
 		}
 	}
 
