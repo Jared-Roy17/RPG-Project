@@ -7,7 +7,8 @@ public class GameInformation : MonoBehaviour {
 	void Awake() {
 		DontDestroyOnLoad (gameObject);
 	}
-
+		
+	public static bool isMale { get; set; }
 	public static BaseCharacterClass PlayerClass { get; set;}
 	public static BaseEquipment EquipmentOne{ get; set;}
 	public static string PlayerName { get; set;}

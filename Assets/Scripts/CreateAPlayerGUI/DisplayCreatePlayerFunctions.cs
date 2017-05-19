@@ -58,7 +58,7 @@ public class DisplayCreatePlayerFunctions {
 	public void DisplayFinalSetup(){
 		playerName = GUI.TextArea (new Rect(20,10,150,25), playerName, 20);
 		playerBio = GUI.TextArea (new Rect(20,90,250,200),playerBio, 250);
-		genderSelection = GUI.SelectionGrid (new Rect (0, 0, 0, 0), genderSelection, genderTypes, 1);
+		genderSelection = GUI.SelectionGrid (new Rect (300, 10, 100, 100), genderSelection, genderTypes, 1);
 
 	}
 
@@ -86,6 +86,11 @@ public class DisplayCreatePlayerFunctions {
 					ChooseClass (classSelection);
 					CreateAPlayerGUI.currentState = CreateAPlayerGUI.CreateAPlayerStates.STATALLOCATION;
 				} else if (CreateAPlayerGUI.currentState == CreateAPlayerGUI.CreateAPlayerStates.STATALLOCATION) {
+					statAllocationModule.pointsToAllocate [0] = GameInformation.Stamina;
+					statAllocationModule.pointsToAllocate [1] = GameInformation.Endurance;
+					statAllocationModule.pointsToAllocate [2] = GameInformation.Intellect;
+					statAllocationModule.pointsToAllocate [3] = GameInformation.Strength;
+					statAllocationModule.pointsToAllocate [4] = GameInformation.Resistance;
 					CreateAPlayerGUI.currentState = CreateAPlayerGUI.CreateAPlayerStates.FINALSETUP;
 				}
 			}
